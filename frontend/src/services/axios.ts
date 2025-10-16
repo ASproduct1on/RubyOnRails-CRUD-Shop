@@ -1,7 +1,8 @@
 import axios, { AxiosError } from 'axios'
 
-const API_BASE_URL =
-	(import.meta as any).env?.VITE_API_URL || 'http://localhost:3000'
+const API_BASE_URL = (import.meta as any).env?.PROD
+	? ''
+	: 'http://localhost:3000'
 
 export const api = axios.create({
 	baseURL: `${API_BASE_URL}/api/v1`,

@@ -29,4 +29,14 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  get '*path', to: 'fallback#index', constraints: ->(req) do
+
+    !req.xhr? && 
+    req.format.html? && 
+    !req.path.start_with?('/api', '/rails')
+
+    end
+  
+  root 'fallback#index'
 end
