@@ -59,7 +59,7 @@ export default function AdminUserPage() {
 				first_name: user.first_name,
 				last_name: user.last_name,
 				email: user.email,
-				role: UserRole.USER,
+				role: user.role as any,
 			})
 		} else {
 			setEditingUser(null)
