@@ -1,7 +1,10 @@
 import axios, { AxiosError } from 'axios'
 
+const API_BASE_URL =
+	(import.meta as any).env?.VITE_API_URL || 'http://localhost:3000'
+
 export const api = axios.create({
-	baseURL: '/api/v1',
+	baseURL: `${API_BASE_URL}/api/v1`,
 	withCredentials: true,
 	headers: {
 		'Content-Type': 'application/json',
