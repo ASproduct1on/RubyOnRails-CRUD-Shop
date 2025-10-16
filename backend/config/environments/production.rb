@@ -2,6 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.cache_store = :memory_store
   config.active_job.queue_adapter = :async
   config.hosts.clear
   config.force_ssl = false
