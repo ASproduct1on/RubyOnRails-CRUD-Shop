@@ -2,10 +2,10 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-   config.hosts.clear
+  config.hosts.clear
   config.force_ssl = false
   config.log_level = :info
-config.public_file_server.enabled = true
+  config.public_file_server.enabled = true
   # Code is not reloaded between requests.
   config.enable_reloading = false
   config.action_cable.allowed_request_origins = [ /https?:\/\/.*/ ]
@@ -51,7 +51,7 @@ config.public_file_server.enabled = true
   config.cache_store = :solid_cache_store
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  config.active_job.queue_adapter = :solid_queue
+  config.active_job.queue_adapter = :async
   config.solid_queue.connects_to = { database: { writing: :queue } }
 
   # Ignore bad email addresses and do not raise email delivery errors.
